@@ -1,0 +1,118 @@
+* yarn global add expo-cli
+* expo init "Name project"
+
+* yarn create react-app "Name Project"
+* cd "Name Project"
+* yarn start
+
+// Configurando rotas
+
+* yarn add react-router-dom
+* Crie arquivo routes.js dentro da pasta src com as seguintes configurações
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+Importar paginas da aplicação
+import Main from './pages/main/index';
+import Repository from './pages/repository/index';
+
+export default function Routes() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Main} />
+        <Route path="/repository" component={Repository} />
+      </Switch>
+    </BrowserRouter>
+  );
+}
+
+importar esse component Routes no App.js
+
+// Configurando rotas
+
+// Configurando Styled Components
+
+yarn add styled-components
+
+Crie o componente de estilização junto ao componente a ser estilizado
+import styled from 'styled-components';
+
+******************************** Opcional ESlint *************************************
+
+editorConfig => Generate .editorconfig na raiz com projeto {
+   root = true
+
+   [*]
+   end_of_line = lf
+   indent_style = space
+   indent_size = 2
+   charset = utf-8
+   trim_trailing_whitespace = true
+   insert_final_newline = true
+}
+
+yarn add eslint -D {
+   yarn eslint --init {
+      => To check syntax, find problems, and force code style
+      => JavaScript modules (import/export)
+      => React
+      => TypeScript ( N )
+      => Browser
+      => Use a popular style guide
+      => Airbnb
+      => JavaScript
+      => Y para instalar dependências
+      => Apague arquivo "Package-lock.json" e rode yarn no terminal para                                              atualizar as dependências.
+   }
+
+   yarn add prettier eslint-config-prettier eslint-plugin-prettier babel-eslint -D {
+      vá ao arquivo .eslintrc.js e faça as seguintes configurações {
+/////////////////////////////////////////////////////////////////////////////////////
+         module.exports = {
+           env: {
+             browser: true,
+             es6: true,
+           },
+           extends: [
+             'plugin:react/recommended',
+             'airbnb',
+             'prettier',
+             'prettier/react'
+           ],
+           globals: {
+             Atomics: 'readonly',
+             SharedArrayBuffer: 'readonly',
+           },
+           parser: 'babel-eslint',
+           parserOptions: {
+             ecmaFeatures: {
+               jsx: true,
+             },
+             ecmaVersion: 2018,
+             sourceType: 'module',
+           },
+           plugins: [
+             'react',
+             'prettier'
+           ],
+           rules: {
+             'prettier/prettier': 'error',
+             'react/jsx-filename-extension': [
+               'warn',
+               { extensions: ['.jsx', '.js'] }
+             ],
+             'import/prefer-default-export': 'off'
+           },
+         };
+/////////////////////////////////////////////////////////////////////////////////////
+      }
+
+      Crie um arquivo .prettierrc na raiz do projeto com as seguintes config {
+         {
+           "singleQuote": true,
+           "trailingComma": "es5"
+         }
+      }
+   }
+
+******************************** Opcional ESlint *************************************
