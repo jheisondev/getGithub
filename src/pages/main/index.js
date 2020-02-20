@@ -3,7 +3,8 @@ import { FaGithubAlt, FaPlusCircle, FaSpinner } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
-import { Container, Form, SubmitButton, MsgError, List } from './styles';
+import { Form, SubmitButton, MsgError, List } from './styles';
+import Container from '../../components/Container/index';
 
 function Main() {
   const reposLocalStorage = localStorage.getItem('repos');
